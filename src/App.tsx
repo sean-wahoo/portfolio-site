@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import Menu from "components/Menu";
+import Content from "components/Content";
 import styles from "styles/App.module.scss";
+import SelectionContext, { SelectionProvider } from "utils/SelectionContext";
 
 //<script src="https://kit.fontawesome.com/eb9214e190.js" crossorigin="anonymous"></script>
 
 function App() {
-    const [selection, updateSelection] = useState("about");
-    const handleSelectionUpdate = (selFromChild: string) => {
-        updateSelection(selFromChild);
-    };
+    const { selection, setSelection } = useContext(SelectionContext);
+    // const handleSelectionUpdate = (selFromChild: string) => {
+    //     setSelection(selFromChild);
+    // };
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://kit.fontawesome.com/eb9214e190.js";
@@ -23,9 +25,12 @@ function App() {
     //ALSO TODO: make a fun little code editor that runs code lol
 
     return (
-        <>
-            <Menu sendDataUp={handleSelectionUpdate} />
-        </>
+        <div className={styles.container}>
+            <SelectionProvider value={{ selection, setSelection }}>
+                <Menu />
+                <Content />
+            </SelectionProvider>
+        </div>
     );
 }
 
