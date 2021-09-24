@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "styles/App.module.scss";
 
 export default function Menu(props: any) {
