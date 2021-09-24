@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Menu from "components/Menu";
+import Content from "components/Content";
 import styles from "styles/App.module.scss";
 
 //<script src="https://kit.fontawesome.com/eb9214e190.js" crossorigin="anonymous"></script>
@@ -23,9 +24,10 @@ function App() {
     //ALSO TODO: make a fun little code editor that runs code lol
 
     return (
-        <>
+        <div className={styles.container}>
             <Menu sendDataUp={handleSelectionUpdate} />
-        </>
+            <Content page={selection} />
+        </div>
     );
 }
 
