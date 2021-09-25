@@ -6,6 +6,7 @@ import SelectionContext from "utils/SelectionContext";
 import about from "pages/about.md";
 import tech from "pages/tech.md";
 import projects from "pages/projects.md";
+import contact from "pages/contact.md";
 
 export default function Content() {
     const [markdown, setMarkdown] = useState("");
@@ -21,6 +22,10 @@ export default function Content() {
             .then((text) => setMarkdown(text));
     selection === "projects" &&
         fetch(projects)
+            .then((response) => response.text())
+            .then((text) => setMarkdown(text));
+    selection === "contact" &&
+        fetch(contact)
             .then((response) => response.text())
             .then((text) => setMarkdown(text));
 
