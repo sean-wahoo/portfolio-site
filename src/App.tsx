@@ -4,13 +4,9 @@ import Content from "components/Content";
 import styles from "styles/App.module.scss";
 import SelectionContext, { SelectionProvider } from "utils/SelectionContext";
 
-//<script src="https://kit.fontawesome.com/eb9214e190.js" crossorigin="anonymous"></script>
-
 function App() {
     const { selection, setSelection } = useContext(SelectionContext);
-    // const handleSelectionUpdate = (selFromChild: string) => {
-    //     setSelection(selFromChild);
-    // };
+
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://kit.fontawesome.com/eb9214e190.js";
@@ -21,7 +17,6 @@ function App() {
         };
     });
 
-    //TODO: make a markdown page for each selection and start using git dumbass
     //ALSO TODO: make a fun little code editor that runs code lol
 
     return (
