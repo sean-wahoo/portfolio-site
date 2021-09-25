@@ -2,8 +2,6 @@
 
 ---
 
-![image alt >](https://upload.wikimedia.org/wikipedia/commons/0/07/Manjaro-logo.png)
-
 Hi. My name is **_Sean Reichel_** and I'm a **_web developer_**.
 
 I've been building websites for around 2 years now and have used a large variety of
