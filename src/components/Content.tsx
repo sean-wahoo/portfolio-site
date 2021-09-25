@@ -1,7 +1,7 @@
 import styles from "styles/App.module.scss";
 import ReactMarkdown from "react-markdown";
 import TabList from "components/TabList";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import SelectionContext from "utils/SelectionContext";
 import about from "pages/about.md";
 import tech from "pages/tech.md";
@@ -10,7 +10,7 @@ import contact from "pages/contact.md";
 
 export default function Content() {
     const [markdown, setMarkdown] = useState("");
-    const { selection, setSelection } = useContext(SelectionContext);
+    const { selection } = useContext(SelectionContext);
 
     selection === "about" &&
         fetch(about)

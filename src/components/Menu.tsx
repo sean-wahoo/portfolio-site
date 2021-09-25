@@ -2,15 +2,13 @@ import { useState, useContext } from "react";
 import SelectionContext from "utils/SelectionContext";
 import styles from "styles/App.module.scss";
 
-export default function Menu(props: any) {
+export default function Menu() {
     const [folder, toggleFolder] = useState(true);
     const { selection, setSelection } = useContext(SelectionContext);
-    // const [selected, changeSelected] = useState("about");
 
     const handleSelectionChange = (selection: string) => {
         console.log(selection);
         setSelection(selection);
-        // props.sendDataUp(selection);
     };
 
     return (
