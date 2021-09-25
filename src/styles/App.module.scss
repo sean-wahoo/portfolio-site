@@ -11,103 +11,155 @@ body {
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
+    font-size: clamp(0.7rem, 1vw, 1.2rem);
 }
 
 .container {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
 }
 
 .menu {
-    user-select: none;
-    font-family: "Fira Mono";
-    font-size: 1.4rem;
-    list-style-type: none;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    color: rgb(255, 0, 0);
-    width: 300px;
-    height: 100vh;
-    background-color: rgb(53, 53, 59);
-
-    li {
-        font-family: "Fira Mono";
-        cursor: pointer;
-        padding: 0.25rem 1rem;
-        &:first-child {
-            margin-top: 1rem;
-            color: #fff;
-            &::before {
-                color: rgb(223, 159, 75);
-                font-size: 1.2rem;
-                font-family: "Font Awesome 5 Free";
-                margin-right: 0.5rem;
-            }
-            &::after {
-                content: "";
-            }
-        }
-        &:not(:first-child) {
-            color: #fff;
-            &::before {
-                font-size: 1.2rem;
-                color: rgb(255, 233, 38);
-                font-family: "Font Awesome 5 Brands";
-                margin: 0 1rem 0 2rem;
-                font-weight: 400;
-            }
-            &::after {
-                content: ".js";
-                color: rgb(192, 192, 192);
-            }
-        }
-        &:hover {
-            background-color: rgb(83, 83, 87);
-        }
-        &.selected {
-            background-color: rgb(96, 96, 99);
-        }
-    }
+    display: none;
 }
-
 .tablist {
     font-family: "fira mono";
+    font-size: 1rem;
     width: 100%;
-    background-color: rgb(45, 45, 49);
     padding: 0 0.4rem;
     color: rgb(194, 194, 194);
     display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
     flex-flow: row nowrap;
-
     .tab {
-        user-select: none;
-        padding: 0.4rem 2rem 0.4rem 0.6rem;
-        &:hover {
-            background-color: rgb(102, 102, 102);
-            cursor: pointer;
-        }
         &::before {
-            color: rgb(255, 233, 38);
-            font-size: 1rem;
-            font-family: "Font Awesome 5 Brands";
-            margin-right: 0.5rem;
-            content: "\f3b8";
+            content: "";
         }
         &::after {
             content: ".js";
         }
         &.selected {
-            background-color: rgb(63, 63, 70);
+            color: #fff;
+        }
+    }
+}
+
+@media (min-width: $md) {
+    .menu {
+        user-select: none;
+        font-family: "Fira Mono";
+        font-size: 1.2rem;
+        list-style-type: none;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        color: rgb(255, 0, 0);
+        width: 300px;
+        min-height: 100%;
+        background-color: rgb(53, 53, 59);
+
+        li {
+            font-family: "Fira Mono";
+            cursor: pointer;
+            padding: 0.25rem 1rem;
+            &:first-child {
+                margin-top: 1rem;
+                color: #fff;
+                &::before {
+                    color: rgb(223, 159, 75);
+                    font-size: 1.2rem;
+                    font-family: "Font Awesome 5 Free";
+                    margin-right: 0.5rem;
+                }
+                &::after {
+                    content: "";
+                }
+            }
+            &:not(:first-child) {
+                color: #fff;
+                &::before {
+                    font-size: 1.2rem;
+                    color: rgb(255, 233, 38);
+                    font-family: "Font Awesome 5 Brands";
+                    margin: 0 1rem 0 2rem;
+                    font-weight: 400;
+                }
+                &::after {
+                    content: ".js";
+                    color: rgb(192, 192, 192);
+                }
+            }
+            &:hover {
+                background-color: rgb(83, 83, 87);
+            }
+            &.selected {
+                background-color: rgb(96, 96, 99);
+            }
+        }
+    }
+
+    .tablist {
+        font-family: "fira mono";
+        width: 100%;
+        background-color: rgb(45, 45, 49);
+        padding: 0 0.4rem;
+        color: rgb(194, 194, 194);
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 0;
+        flex-flow: row nowrap;
+
+        .tab {
+            user-select: none;
+            padding: 0.4rem 2rem 0.4rem 0.6rem;
+            &:hover {
+                background-color: rgb(102, 102, 102);
+                cursor: pointer;
+            }
+            &::before {
+                color: rgb(255, 233, 38);
+                font-size: 1rem;
+                font-family: "Font Awesome 5 Brands";
+                margin-right: 0.5rem;
+                content: "\f3b8";
+            }
+            &::after {
+                content: ".js";
+            }
+            &.selected {
+                background-color: rgb(63, 63, 70);
+            }
         }
     }
 }
 
 .content {
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     background-color: rgb(63, 63, 70);
-    box-sizing: border-box;
+    box-sizing: content-box;
+
+    img[alt$=">"] {
+        float: right;
+    }
+    img[alt="portfolio_img"] {
+        width: 700px;
+        max-width: 100%;
+    }
+
+    .markdown {
+        padding: 0 2rem;
+        color: rgb(202, 202, 202);
+        font-size: 1.6rem;
+        font-family: "fira mono";
+        max-width: 1600px;
+        box-sizing: border-box;
+
+        a {
+            color: #fff;
+        }
+    }
 }
