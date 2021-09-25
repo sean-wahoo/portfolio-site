@@ -163,3 +163,22 @@ body {
         }
     }
 }
+
+.socials {
+    margin-top: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    padding: 0.4rem;
+
+    .icon {
+        font-size: 1.4rem;
+        user-select: none;
+        cursor: pointer;
+        color: rgb(194, 194, 194);
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
