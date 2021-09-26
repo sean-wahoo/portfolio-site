@@ -7,15 +7,16 @@ import SelectionContext, { SelectionProvider } from "utils/SelectionContext";
 function App() {
     const { selection, setSelection } = useContext(SelectionContext);
 
-    // useEffect(() => {
-    //     const script = document.createElement("script");
-    //     script.src = "https://kit.fontawesome.com/eb9214e190.js";
-    //     script.crossOrigin = "anonymous";
-    //     document.body.appendChild(script);
-    //     return () => {
-    //         document.body.removeChild(script);
-    //     };
-    // });
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://kit.fontawesome.com/eb9214e190.js";
+        script.crossOrigin = "anonymous";
+        script.defer = true;
+        document.body.appendChild(script);
+        return () => {
+            document.body.removeChild(script);
+        };
+    });
 
     //ALSO TODO: make a fun little code editor that runs code lol
 
