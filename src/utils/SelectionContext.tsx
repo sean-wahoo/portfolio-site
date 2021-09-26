@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 type SelectionContextType = {
     selection: string;
@@ -7,7 +7,7 @@ type SelectionContextType = {
 
 const SelectionContext = createContext<SelectionContextType>({
     selection: "about",
-    setSelection: (sel: string) => {},
+    setSelection: () => {},
 });
 export const SelectionProvider = (props: any) => {
     const [selection, setSelection] = useState("about");

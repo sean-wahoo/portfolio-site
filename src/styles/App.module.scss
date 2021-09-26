@@ -8,7 +8,7 @@ $xl: 1280px;
 html,
 body {
     margin: 0px;
-    min-height: 100vh;
+    min-height: 100%;
     width: 100%;
     overflow-x: hidden;
     font-size: clamp(0.7rem, 1vw, 1.2rem);
@@ -47,7 +47,57 @@ body {
     }
 }
 
+.footer {
+    margin-top: auto;
+    .socials {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        padding: 0.4rem;
+
+        .icon {
+            font-size: 1.4rem;
+            user-select: none;
+            cursor: pointer;
+            color: rgb(194, 194, 194);
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .copyright {
+        color: rgb(194, 194, 194);
+        font-size: clamp(12px, 0.6rem, 14px);
+        text-align: center;
+    }
+}
+
+.footer_menu {
+    display: none;
+}
+
+.footer_content {
+    display: block;
+
+    margin: 1.4rem;
+    margin-bottom: 112px;
+    .socials {
+        .icon {
+            font-size: 3rem;
+        }
+    }
+}
+
 @media (min-width: $md) {
+    .footer_menu {
+        display: block;
+    }
+
+    .footer_content {
+        display: none;
+    }
+
     .menu {
         user-select: none;
         font-family: "Fira Mono";
@@ -138,9 +188,12 @@ body {
 
 .content {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     background-color: rgb(63, 63, 70);
     box-sizing: content-box;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
 
     img[alt$=">"] {
         float: right;
@@ -150,6 +203,19 @@ body {
         max-width: 100%;
     }
 
+    // transition: opacity 400ms ease 0s, transform 400ms ease 0s; transform: none; opacity: 1;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(120px);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
     .markdown {
         padding: 0 2rem;
         color: rgb(202, 202, 202);
@@ -157,6 +223,15 @@ body {
         font-family: "fira mono";
         max-width: 1600px;
         box-sizing: border-box;
+        margin-bottom: auto;
+
+        @for $i from 0 through 12 {
+            :nth-child(#{$i}n) {
+                opacity: 0;
+                animation: fadeIn 400ms ease forwards;
+                animation-delay: calc(#{$i} * 50ms);
+            }
+        }
 
         a {
             color: #fff;
