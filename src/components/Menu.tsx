@@ -1,9 +1,7 @@
-import { lazy, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import SelectionContext from "utils/SelectionContext";
 import styles from "styles/App.module.scss";
-// import Footer from "components/Footer";
-
-const Footer = lazy(() => import("components/Footer"));
+import Footer from "components/Footer";
 
 export default function Menu() {
     const [folder, toggleFolder] = useState(true);
