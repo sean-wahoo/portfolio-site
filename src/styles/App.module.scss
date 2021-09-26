@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap");
 
 $sm: 560px;
 $md: 880px;
@@ -25,7 +25,7 @@ body {
     display: none;
 }
 .tablist {
-    font-family: "fira mono";
+    font-family: "Fira Code";
     font-size: 1rem;
     width: 100%;
     padding: 0 0.4rem;
@@ -100,7 +100,7 @@ body {
 
     .menu {
         user-select: none;
-        font-family: "Fira Mono";
+        font-family: "Fira Code";
         font-size: 1.2rem;
         list-style-type: none;
         display: flex;
@@ -112,7 +112,7 @@ body {
         background-color: rgb(53, 53, 59);
 
         li {
-            font-family: "Fira Mono";
+            font-family: "Fira Code";
             cursor: pointer;
             padding: 0.25rem 1rem;
             &:first-child {
@@ -152,7 +152,7 @@ body {
     }
 
     .tablist {
-        font-family: "fira mono";
+        font-family: "Fira Code";
         width: 100%;
         background-color: rgb(45, 45, 49);
         padding: 0 0.4rem;
@@ -220,7 +220,7 @@ body {
         padding: 0 2rem;
         color: rgb(202, 202, 202);
         font-size: 1.6rem;
-        font-family: "fira mono";
+        font-family: "Fira Code";
         max-width: 1600px;
         box-sizing: border-box;
         margin-bottom: auto;
