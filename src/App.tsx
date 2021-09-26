@@ -1,8 +1,12 @@
-import { useEffect, useContext } from "react";
-import Menu from "components/Menu";
-import Content from "components/Content";
+import { Suspense, lazy, useEffect, useContext } from "react";
+// import Menu from "components/Menu";
+// import Content from "components/Content";
 import styles from "styles/App.module.scss";
 import SelectionContext, { SelectionProvider } from "utils/SelectionContext";
+
+const Menu = lazy(() => import("components/Menu"));
+const Content = lazy(() => import("components/Content"));
+// const SelectionContext, {SelectionProvider} = lazy(() => import('utils/SelectionContext'))
 
 function App() {
     const { selection, setSelection } = useContext(SelectionContext);
@@ -21,12 +25,14 @@ function App() {
     //ALSO TODO: make a fun little code editor that runs code lol
 
     return (
-        <div className={styles.container}>
-            <SelectionProvider value={{ selection, setSelection }}>
-                <Menu />
-                <Content />
-            </SelectionProvider>
-        </div>
+        <Suspense fallback={() => <p>loading...</p>}>
+            <div className={styles.container}>
+                <SelectionProvider value={{ selection, setSelection }}>
+                    <Menu />
+                    <Content />
+                </SelectionProvider>
+            </div>
+        </Suspense>
     );
 }
 

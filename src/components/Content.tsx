@@ -1,13 +1,17 @@
 import styles from "styles/App.module.scss";
-import ReactMarkdown from "react-markdown";
-import TabList from "components/TabList";
-import Footer from "components/Footer";
-import { useState, useContext } from "react";
+// import ReactMarkdown from "react-markdown";
+// import TabList from "components/TabList";
+// import Footer from "components/Footer";
+import { lazy, useState, useContext } from "react";
 import SelectionContext from "utils/SelectionContext";
 import about from "pages/about.md";
 import tech from "pages/tech.md";
 import projects from "pages/projects.md";
 import contact from "pages/contact.md";
+
+const ReactMarkdown = lazy(() => import("react-markdown"));
+const TabList = lazy(() => import("components/TabList"));
+const Footer = lazy(() => import("components/Footer"));
 
 export default function Content() {
     const [markdown, setMarkdown] = useState("");
