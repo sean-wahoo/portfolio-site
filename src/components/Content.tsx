@@ -1,6 +1,7 @@
 import styles from "styles/App.module.scss";
 import ReactMarkdown from "react-markdown";
 import TabList from "components/TabList";
+import Footer from "components/Footer";
 import { useState, useContext } from "react";
 import SelectionContext from "utils/SelectionContext";
 import about from "pages/about.md";
@@ -16,6 +17,7 @@ export default function Content() {
         fetch(about)
             .then((response) => response.text())
             .then((text) => setMarkdown(text));
+
     selection === "tech" &&
         fetch(tech)
             .then((response) => response.text())
@@ -32,9 +34,10 @@ export default function Content() {
     return (
         <div className={styles.content}>
             <TabList tabSelected={selection} />
-            <div className={styles.markdown}>
+            <div className={styles.markdown} key={markdown}>
                 <ReactMarkdown linkTarget="_blank">{markdown}</ReactMarkdown>
             </div>
+            <Footer isMenu={false} />
         </div>
     );
 }
