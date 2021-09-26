@@ -1,11 +1,11 @@
-import { Suspense, lazy, useEffect, useContext } from "react";
-// import Menu from "components/Menu";
-// import Content from "components/Content";
+import { Suspense, useEffect, useContext } from "react";
+import Menu from "components/Menu";
+import Content from "components/Content";
 import styles from "styles/App.module.scss";
 import SelectionContext, { SelectionProvider } from "utils/SelectionContext";
 
-const Menu = lazy(() => import("components/Menu"));
-const Content = lazy(() => import("components/Content"));
+// const Menu = lazy(() => import("components/Menu"));
+// const Content = lazy(() => import("components/Content"));
 // const SelectionContext, {SelectionProvider} = lazy(() => import('utils/SelectionContext'))
 
 function App() {
