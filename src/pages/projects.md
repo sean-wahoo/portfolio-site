@@ -9,7 +9,7 @@
 
 ---
 
-[browngirlbooklover.com](https://browngirlbooklover.com) is a book club site for a [Fiverr](https://fiverr.com/seanreichel) client. It was made with NextJS and SCSS.
+[browngirlbooklover.com](https://browngirlbooklover.com) is a site for a Fiverr client. It was made with NextJS and SCSS.
 
 ![portfolio_img](/portfolio_imgs/bgbl.webp)
 
