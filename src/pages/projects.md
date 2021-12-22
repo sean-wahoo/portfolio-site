@@ -4,7 +4,7 @@
 I got a lot of help and inspiration from the YouTuber/Developer [devaslife.](https://www.youtube.com/c/devaslife)
 \
 \
-![portfolio_img](/portoflio_imgs/me.webp)
+![portfolio_img](/portfolio_imgs/me.webp)
 
 ---
 
@@ -16,7 +16,8 @@ I got a lot of help and inspiration from the YouTuber/Developer [devaslife.](htt
 ---
 
 [browngirlbooklover.com](https://browngirlbooklover.com) is a site for a Fiverr client. It was made with NextJS and SCSS.
-
+\
+\
 ![portfolio_img](/portfolio_imgs/bgbl.webp)
 
 ---
