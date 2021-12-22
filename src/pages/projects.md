@@ -2,6 +2,14 @@
 
 ---
 
+[weather-site](https://markdown-editor-seven.vercel.app/) is a tool that lets you edit and preview markdown in the browser. I got a lot of
+inspiration and help from the Youtuber/Developer, [devaslife.](https://www.youtube.com/c/devaslife)
+\
+\
+![portfolio_img](/portfolio_imgs/me.webp)
+
+---
+
 [weather-site](https://weather-site-ten.vercel.app/) is a little web app I made that can read you the forecast for whatever US city you give it.
 \
 \
